@@ -1,0 +1,35 @@
+/*Property and Rights of @Lozyy on Github
+This is a simple TriviaGame which asks the user 6 questions
+Nothing fancy, seeing what I can create and testing some of my skills
+A Hangman game is soon to come
+*/
+
+import java.util.Scanner;
+
+public class TriviaGame {
+    public static String guess;
+    public static int countQs;
+    
+    public static void main(String[] args){
+        Scanner kb = new Scanner(System.in);
+        
+        TriviaGame game = new Questions();
+        
+        System.out.println("Hello User, Let's play some trivia!");
+        
+        System.out.println("I will give you 6 random questions.\nAnswer all correct and you get a prize.\nMiss one question"
+                + " and game over.\nLet us begin");
+        
+        while(Questions.inCorrect != 1 && countQs < 6){
+            Questions.getQuestion();
+            countQs++;
+        }
+        
+        if(Questions.inCorrect == 0){
+            System.out.println("Congratulations you won!");
+        }
+        else
+            System.out.println("Better luck next time.");
+        
+    }
+}
