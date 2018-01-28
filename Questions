@@ -1,0 +1,94 @@
+/*Property and Rights of @Lozyy on Github
+This is a simple TriviaGame which asks the user 6 questions
+Nothing fancy, seeing what I can create and testing some of my skills
+A Hangman game is soon to come
+*/
+
+import java.util.Scanner;
+
+public class Questions extends TriviaGame{
+    public static int inCorrect = 0;
+    
+    public Questions(){
+        super();
+    }
+    
+    public static String getQuestion(){
+        Scanner kb = new Scanner(System.in);
+        final int questions = 6;
+        int correct = 0;
+
+            if(TriviaGame.countQs == 1){
+                System.out.println("What is the most popular board game of all time?");
+                System.out.println("A. Monopoly\nB. Chess\nC. Checkers");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("B") || guess.equals("b")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is B.\n";
+            }
+            else if(TriviaGame.countQs == 2){
+                System.out.println("The Hoover Dam in the United States is built on what River?");
+                System.out.println("A. Colorado River\nB. Columbia River\nC. Missouri River ");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("A") || guess.equals("a")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is A\n";
+            }
+            else if(TriviaGame.countQs == 3){
+                System.out.println("Which team did the CHicago Cubs play in the 1945 World Series?");
+                System.out.println("A. New York Yankees\nB. Detroit Tigers\nC. Los Angeles Dodgers");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("B") || guess.equals("b")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is B\n";
+            }
+            else if(TriviaGame.countQs == 4){
+                System.out.println("Who was the first president of the United States to live in the White House?");
+                System.out.println("A. George Washington\nB. Thomas Jefferson\nC. John Adams");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("C") || guess.equals("c")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is C\n";
+            }
+            else if(TriviaGame.countQs == 5){
+                System.out.println("What kind of weapon is a falchion?");
+                System.out.println("A. Sword\nB. Knife\nC. Gun");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("A") || guess.equals("a")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is A\n";
+            }
+            else
+                System.out.println("When did Margaret Thatcher become Prime Minister?");
+                System.out.println("A. 1974\nB. 1981\nC. 1979");
+                TriviaGame.guess = kb.next();
+                if(guess.equals("C") || guess.equals("c")){
+                    correct++;
+                    return "Correct!\n";
+                }
+                else{
+                    inCorrect++;
+                    return "Incorrect, GAME OVER. The correct answer is C\n";
+                }
+    }
+}
